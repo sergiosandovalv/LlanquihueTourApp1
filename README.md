@@ -159,7 +159,7 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 
 # 📄 Resultado esperado
 
-Al ejecutar el sistema se mostrará una salida similar a la siguiente:
+Al ejecutar el sistema se mostrará la siguiente salida:
 
 ```text
 ===== RUTAS GASTRONÓMICAS =====
