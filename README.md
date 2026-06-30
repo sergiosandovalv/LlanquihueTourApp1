@@ -12,156 +12,186 @@ Sede: Santiago Online
 
 # 📘 Descripción general del sistema
 
-Este proyecto corresponde a la Evaluación de la asignatura Desarrollo Orientado a Objetos I.
+Este proyecto corresponde a la Evaluación de la asignatura Desarrollo Orientado a Objetos I, correspondiente a la Semana 6.
 
-El sistema desarrollado en Java permite gestionar información de tours turísticos de la empresa Llanquihue Tour, cargando datos desde un archivo de texto y almacenándolos en una colección dinámica mediante el uso de objetos.
+El sistema fue desarrollado en Java y representa distintos servicios turísticos ofrecidos por la empresa **Llanquihue Tour**, aplicando los principales conceptos de Programación Orientada a Objetos mediante una jerarquía de clases.
 
-La aplicación implementa conceptos fundamentales de Programación Orientada a Objetos, tales como:
 
--Encapsulamiento.
+La aplicación implementa conceptos:
 
--Constructores.
+- Encapsulamiento.
+  
+- Herencia.
+  
+- Polimorfismo.
+  
+- Constructores.
+  
+- Getters y Setters.
+  
+- Sobrescritura de métodos mediante `@Override`.
+  
+- Uso de `super()` para reutilizar constructores.
+  
+- Organización modular mediante paquetes.
+  
+- Ejecución desde una clase principal.
 
--Getters y Setters.
+El sistema crea distintos servicios turísticos, mostrando su información por consola utilizando el método `toString()` sobrescrito en cada subclase.
 
--Sobrescritura de métodos mediante toString().
-
--Composición entre clases.
-
--Manejo de archivos de texto.
-
--Uso de colecciones ArrayList.
-
--Estructuras de control if y while.
-
--Manejo de excepciones mediante try-catch.
-
--Validaciones básicas.
-
--Generación de archivo ejecutable .jar mediante Maven.
-
-El sistema permite mostrar el listado completo de tours, filtrar aquellos pertenecientes a la categoría Familiar y realizar una búsqueda simple por nombre de tour.
 
 # 🧱 Estructura general del proyecto
 
 ```text
+LlanquihueTourApp1/
 
-LlanquihueTourApp/
-├── pom.xml
-├── .gitignore
+├── build.xml
+├── manifest.mf
+├── nbproject/
 └── src/
-    └── main/
-        ├── java/
-        │   └── com/
-        │       └── LlanquihueTourapp/
-        │           ├── app/
-        │           │   └── Main.java
-        │           ├── data/
-        │           │   └── GestorDatos.java
-        │           ├── model/
-        │           │   ├── Tour.java
-        │           │   └── GuiaTuristico.java
-        │           └── util/
-        │               └── Validador.java
-        └── resources/
-            └── tours.txt
+    ├── data/
+    │   └── GestorServicios.java
+    │
+    ├── model/
+    │   ├── ServicioTuristico.java
+    │   ├── RutaGastronomica.java
+    │   ├── PaseoLacustre.java
+    │   └── ExcursionCultural.java
+    │
+    └── ui/
+        └── Main.java
+
 
 ```
 
 
 #  Descripción de paquetes:
 
-## 📁 app
+## 📁 ui
 
-Contiene la clase principal Main, encargada de ejecutar la aplicación, cargar los datos, mostrar el listado completo de tours, filtrar por tipo Familiar y realizar una búsqueda simple.
+Contiene la clase **Main**, encargada de iniciar la ejecución del sistema creando una instancia de `GestorServicios` y mostrando la información de los servicios turísticos.
 
 ## 📁 model
 
-Contiene las clases principales del dominio:
+Contiene las clases principales del dominio del problema.
 
--Tour: representa cada tour turístico mediante nombre, tipo, precio y guía turístico asociado.
+- **ServicioTuristico:** clase base que representa un servicio turístico.
+  
+- **RutaGastronomica:** hereda de `ServicioTuristico` e incorpora la cantidad de restaurantes.
+  
+- **PaseoLacustre:** hereda de `ServicioTuristico` e incorpora el tipo de embarcación.
+  
+- **ExcursionCultural:** hereda de `ServicioTuristico` e incorpora el lugar histórico visitado.
 
--GuiaTuristico: representa al guía asociado al tour, aplicando composición entre clases.
 
 ## 📁 data
 
-Contiene la clase GestorDatos, responsable de leer el archivo tours.txt, cargar los datos y crear los objetos Tour. 
+Contiene la clase **GestorServicios**, responsable de crear los objetos de prueba y mostrar la información de cada servicio turístico.
 
-## 📁 resources
 
-Contiene el archivo tours.txt, donde se almacenan los datos utilizados por el sistema.
+
+# 🧩 Conceptos de Programación Orientada a Objetos aplicados
+
+- Herencia mediante `extends`.
+  
+- Reutilización de constructores con `super()`.
+  
+- Sobrescritura de métodos utilizando `@Override`.
+  
+- Encapsulamiento mediante atributos privados.
+  
+- Acceso a los atributos mediante Getters y Setters.
+  
+- Organización modular utilizando paquetes.
+  
+- Reutilización del método `toString()` mediante `super.toString()`.
+
+
 
 # ⚙️ Instrucciones para clonar y ejecutar el proyecto
 
 ## Clonar el repositorio
 
-git clone https://github.com/sergiosandovalv/LlanquihueTourApp.git
-
+```bash
+git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
+```
 
 ## Abrir el proyecto
 
-1.-Abrir NetBeans IDE.
+1. Abrir Apache NetBeans IDE.
 
-2.-Seleccionar File → Open Project.
-
-3.-Buscar la carpeta del proyecto clonado.
-
-4.-Abrir el proyecto LlanquihueTourApp.
-
-
-## Ejecutar en NetBeans
-
-1.-Verificar que el archivo tours.txt se encuentre en src/main/resources.
-
-2.-Ejecutar la clase Main.java, ubicada en el paquete com.LlanquihueTourapp.app.
-
-3-El sistema cargará los tours desde el archivo de texto.
-
-4.-Se mostrará el listado completo de tours.
-
-5.Luego se mostrarán los tours filtrados por tipo Familiar.
-
-6.-Finalmente se mostrará una búsqueda simple del tour Frutillar.
+2. Seleccionar **File → Open Project**.
+ 
+3. Buscar la carpeta del proyecto clonado.
+ 
+4. Abrir **LlanquihueTourApp1**.
 
 
-# Compilar y ejecutar el archivo .jar
+## Ejecutar en proyecto
 
-## Generar el archivo ejecutable
-
-1.-Abrir una terminal desde el sistema operativo
-
-2.- Cambiar al directorio raíz del proyecto, ejecutar:
-
-mvn clean package
-
-## Ejecutar el archivo .jar
-
-java -jar target/LlanquihueTourApp-1.0-SNAPSHOT.jar
-
+1. Abrir la clase **Main.java** ubicada en el paquete **ui**.
+   
+2. Ejecutar el proyecto.
+   
+3. El sistema mostrará la información de los servicios turísticos creados.
+   
+4. Se visualizarán las rutas gastronómicas, paseos lacustres y excursiones culturales
 
 
 # 📄 Resultado esperado
 
-El sistema mostrará por consola:
+Al ejecutar el sistema se mostrará una salida similar a la siguiente:
 
-Todos los tours cargados desde el archivo tours.txt.
+```text
+===== RUTAS GASTRONÓMICAS =====
 
-Los tours filtrados por categoría Familiar.
+===== SERVICIO TURÍSTICO =====
 
-El resultado de una búsqueda simple por nombre de tour.
+Nombre: Ruta Sabores del Sur
+Duración: 4 horas
+Cantidad de restaurantes: 5
+
+===== PASEOS LACUSTRES =====
+
+===== SERVICIO TURÍSTICO =====
+
+Nombre: Paseo por el Lago Llanquihue
+Duración: 2 horas
+Tipo de embarcación: Lancha turística
+
+===== EXCURSIONES CULTURALES =====
+
+===== SERVICIO TURÍSTICO =====
+
+Nombre: Excursión Patrimonial Frutillar
+Duración: 4 horas
+Lugar histórico: Teatro del Lago
+```
 
 
+# 🎯 Objetivos de aprendizaje alcanzados
 
-## Ejemplo de búsqueda:
+- Aplicar el concepto de herencia en Java.
+  
+- Implementar polimorfismo mediante sobrescritura de métodos.
+  
+- Organizar un proyecto utilizando paquetes.
+  
+- Reutilizar código mediante el uso de `super()`.
+  
+- Modelar un problema utilizando Programación Orientada a Objetos.
 
-===== BÚSQUEDA DE TOUR =====
 
-===== DATOS DEL TOUR =====
+# 👨‍💻 Autor
 
-Nombre : Frutillar
+**Sergio Sandoval Valenzuela**
 
-Tipo   : Familiar
+**Estudiante de Analista Programador**
 
-Precio : $18000
+**Duoc UC - Santiago Online**
 
-Especialidad : Familiar
+---
+
+# 🔗 Repositorio
+
+https://github.com/sergiosandovalv/LlanquihueTourApp1
