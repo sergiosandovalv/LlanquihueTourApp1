@@ -85,7 +85,7 @@ Contiene la clase **Main**, encargada de iniciar la ejecución del sistema crean
 
 Contiene las clases principales del dominio del problema.
 
-- **ServicioTuristico:** clase base que representa un servicio turístico.
+- **ServicioTuristico:** clase base (padre) que representa un servicio turístico.
   
 - **RutaGastronomica:** hereda de `ServicioTuristico` e incorpora la cantidad de restaurantes.
   
