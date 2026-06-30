@@ -17,7 +17,7 @@ Este proyecto corresponde a la Evaluación de la asignatura Desarrollo Orientado
 El sistema fue desarrollado en Java y representa distintos servicios turísticos ofrecidos por la empresa **Llanquihue Tour**, aplicando los principales conceptos de Programación Orientada a Objetos mediante una jerarquía de clases.
 
 
-La aplicación implementa conceptos:
+La aplicación implementa los siguientes conceptos de Programación Orientada a Objetos:
 
 - Encapsulamiento.
   
@@ -63,7 +63,17 @@ LlanquihueTourApp1/
 
 
 ```
+## Estructura de Herencia aplicado al proyecto
 
+```text
+
+ServicioTuristico
+        │
+        ├──────────────┬──────────────────┐
+        │              │                  │
+RutaGastronomica  PaseoLacustre  ExcursionCultural
+
+```
 
 #  Descripción de paquetes:
 
@@ -106,6 +116,15 @@ Contiene la clase **GestorServicios**, responsable de crear los objetos de prueb
   
 - Reutilización del método `toString()` mediante `super.toString()`.
 
+# 💻 Tecnologías utilizadas
+
+- Java JDK 26
+  
+- Apache NetBeans IDE
+  
+- Git
+  
+- GitHub
 
 
 # ⚙️ Instrucciones para clonar y ejecutar el proyecto
@@ -180,6 +199,7 @@ Lugar histórico: Teatro del Lago
 - Reutilizar código mediante el uso de `super()`.
   
 - Modelar un problema utilizando Programación Orientada a Objetos.
+
 
 
 # 👨‍💻 Autor
