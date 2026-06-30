@@ -165,26 +165,38 @@ Al ejecutar el sistema se mostrará una salida similar a la siguiente:
 ===== RUTAS GASTRONÓMICAS =====
 
 ===== SERVICIO TURÍSTICO =====
-
 Nombre: Ruta Sabores del Sur
 Duración: 4 horas
 Cantidad de restaurantes: 5
 
+===== SERVICIO TURÍSTICO =====
+Nombre: Ruta Gastronómica Llanquihue
+Duración: 3 horas
+Cantidad de restaurantes: 4
+
 ===== PASEOS LACUSTRES =====
 
 ===== SERVICIO TURÍSTICO =====
-
 Nombre: Paseo por el Lago Llanquihue
 Duración: 2 horas
 Tipo de embarcación: Lancha turística
 
+===== SERVICIO TURÍSTICO =====
+Nombre: Navegación a Puerto Varas
+Duración: 3 horas
+Tipo de embarcación: Catamarán
+
 ===== EXCURSIONES CULTURALES =====
 
 ===== SERVICIO TURÍSTICO =====
-
 Nombre: Excursión Patrimonial Frutillar
 Duración: 4 horas
 Lugar histórico: Teatro del Lago
+
+===== SERVICIO TURÍSTICO =====
+Nombre: Recorrido Histórico Puerto Octay
+Duración: 3 horas
+Lugar histórico: Casa Niklitschek
 ```
 
 
