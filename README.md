@@ -216,3 +216,8 @@ Lugar histórico: Casa Niklitschek
 # 🔗 Repositorio
 
 https://github.com/sergiosandovalv/LlanquihueTourApp1
+
+---
+Proyecto desarrollado para la asignatura **Desarrollo Orientado a Objetos I** - Duoc UC.
+
+---
