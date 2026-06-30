@@ -63,7 +63,7 @@ LlanquihueTourApp1/
 
 
 ```
-## Estructura de Herencia aplicado al proyecto
+## Estructura de Herencia del proyecto
 
 ```text
 
