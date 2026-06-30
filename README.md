@@ -67,8 +67,8 @@ LlanquihueTourApp1/
 
 ```text
 
-ServicioTuristico
-        │
+               ServicioTuristico
+                       │
         ├──────────────┬──────────────────┐
         │              │                  │
 RutaGastronomica  PaseoLacustre  ExcursionCultural
