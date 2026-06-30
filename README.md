@@ -2,9 +2,9 @@
 
 ## 🧠 Evaluación – Desarrollo Orientado a Objetos I 
 
-👤 Autor del proyecto
+👨‍💻  Autor del proyecto
 
-Nombre completo: Sergio Sandoval Valenzuela
+Nombre: Sergio Sandoval Valenzuela
 
 Carrera: Analista Programador
 
@@ -212,17 +212,6 @@ Lugar histórico: Casa Niklitschek
   
 - Modelar un problema utilizando Programación Orientada a Objetos.
 
-
-
-# 👨‍💻 Autor
-
-**Sergio Sandoval Valenzuela**
-
-**Estudiante de Analista Programador**
-
-**Duoc UC - Santiago Online**
-
----
 
 # 🔗 Repositorio
 
