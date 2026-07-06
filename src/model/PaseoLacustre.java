@@ -13,6 +13,15 @@ public class PaseoLacustre extends ServicioTuristico {
     
     private String tipoEmbarcacion;
     
+    
+    /**
+     * 
+     * @param nombre Nombre del paseo
+     * @param duracionHoras Duracion del paseo en horas
+     * @param tipoEmbarcacion Tipo de embarcacion 
+     */
+    
+    
    public PaseoLacustre(String nombre, int duracionHoras, String tipoEmbarcacion) {
        
        super(nombre, duracionHoras);
@@ -30,7 +39,7 @@ public class PaseoLacustre extends ServicioTuristico {
 /**
 * Devuelve la informacion del paseo lacustre.
 *
-* @return Información completa del servicio.
+* @return Informacion completa del servicio.
 */   
 
 @Override

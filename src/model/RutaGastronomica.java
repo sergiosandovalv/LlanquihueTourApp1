@@ -37,9 +37,9 @@ public class RutaGastronomica extends ServicioTuristico {
     }
     
 /**
-* Devuelve la información de la ruta gastronómica.
+* Devuelve la información de la ruta gastronomica.
 *
-* @return Información completa del servicio.
+* @return Informacion completa del servicio.
 */
 @Override
     public String toString() {

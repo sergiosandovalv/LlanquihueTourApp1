@@ -1,26 +1,22 @@
-
 package model;
 
 /**
- * Clase base que representa un servicio turístico.
- * Contiene los atributos comunes para todos los servicios turísticos.
+ * Clase base que representa un servicio turístico. Contiene los atributos
+ * comunes para todos los servicios turísticos.
  *
  * @author Sergio Sandoval
  */
-
 public class ServicioTuristico {
-    
-   private String nombre;
-   private int duracionHoras; 
 
-/**
-* Constructor de la clase ServicioTuristico.
-*
-* @param nombre Nombre del servicio turistico.
-* @param duracionHoras Duracion del servicio en horas.
-*/   
-   
-   
+    private String nombre;
+    private int duracionHoras;
+
+    /**
+     * Constructor de la clase ServicioTuristico.
+     *
+     * @param nombre Nombre del servicio turistico.
+     * @param duracionHoras Duracion del servicio en horas.
+     */
     public ServicioTuristico(String nombre, int duracionHoras) {
         this.nombre = nombre;
         this.duracionHoras = duracionHoras;
@@ -41,14 +37,22 @@ public class ServicioTuristico {
     public void setDuracionHoras(int duracionHoras) {
         this.duracionHoras = duracionHoras;
     }
-  
+
+    /**
+     * Muestra la informacion del servicio turistico.
+     */
+    public void mostrarInformacion() {
+        System.out.println(this.toString());
+
+    }
+
     @Override
     public String toString() {
-        return "===== SERVICIO TURÍSTICO =====" +
-               "\nNombre: " + nombre +
-               "\nDuración: " + duracionHoras + " horas";
+        return "===== SERVICIO TURÍSTICO ====="
+                + "\nNombre: " + nombre
+                + "\nDuración: " + duracionHoras + " horas";
     }
-    
+
 } 
    
   
