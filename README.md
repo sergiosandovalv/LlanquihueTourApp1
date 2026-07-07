@@ -14,7 +14,9 @@ Sede: Santiago Online
 
 Este proyecto corresponde a la Evaluación de la asignatura Desarrollo Orientado a Objetos I, correspondiente a la Semana 7.
 
-El sistema fue desarrollado en Java y representa distintos servicios turísticos ofrecidos por la empresa **Llanquihue Tour**, aplicando los principales conceptos de Programación Orientada a Objetos mediante una jerarquía de clases.
+El sistema fue desarrollado en Java y representa distintos servicios turísticos ofrecidos por la empresa Llanquihue Tour.
+
+En esta versión se incorpora el uso de herencia y polimorfismo mediante una colección List<ServicioTuristico>, permitiendo almacenar diferentes tipos de servicios turísticos y recorrerlos utilizando una única referencia de la superclase.
 
 
 La aplicación implementa los siguientes conceptos de Programación Orientada a Objetos:
@@ -38,6 +40,14 @@ La aplicación implementa los siguientes conceptos de Programación Orientada a 
 - Ejecución desde una clase principal.
 
 El sistema crea distintos servicios turísticos, mostrando su información por consola utilizando el método `toString()` sobrescrito en cada subclase.
+
+## 🔄 Polimorfismo aplicado
+
+El proyecto utiliza una colección de tipo:
+
+```java
+List<ServicioTuristico> servicios = new ArrayList<>();
+
 
 
 # 🧱 Estructura general del proyecto
