@@ -12,7 +12,7 @@ Sede: Santiago Online
 
 # 📘 Descripción general del sistema
 
-Este proyecto corresponde a la Evaluación de la asignatura Desarrollo Orientado a Objetos I, correspondiente a la Semana 6.
+Este proyecto corresponde a la Evaluación de la asignatura Desarrollo Orientado a Objetos I, correspondiente a la Semana 7.
 
 El sistema fue desarrollado en Java y representa distintos servicios turísticos ofrecidos por la empresa **Llanquihue Tour**, aplicando los principales conceptos de Programación Orientada a Objetos mediante una jerarquía de clases.
 
