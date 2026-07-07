@@ -1,61 +1,55 @@
-
 package data;
 
+import model.ServicioTuristico;
 import model.RutaGastronomica;
 import model.PaseoLacustre;
 import model.ExcursionCultural;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Clase encargada de crear servicios turiticos
+ * Clase encargada de administrar una coleccion de
+ * servicios turisticos y demostrar el uso del
+ * polimorfismo mediante una lista de objetos.
  *
  * @author Sergio Sandoval
  */
-
 public class GestorServicios {
 
-    
 /**
-* Crea y muestra servicios turiticos
-* 
+* Crea y muestra servicios turisticos aplicando polimorfismo.
 */
-    
-public void mostrarServicios() {
+    public void mostrarServicios() {
 
-        RutaGastronomica ruta1 = new RutaGastronomica(
-                "Ruta Sabores del Sur", 4, 5);
+        List<ServicioTuristico> servicios = new ArrayList<>();
 
-        RutaGastronomica ruta2 = new RutaGastronomica(
-                "Ruta Gastronómica Llanquihue", 3, 4);
+        servicios.add(new RutaGastronomica(
+                "Ruta Sabores del Sur", 4, 5));
 
-        PaseoLacustre paseo1 = new PaseoLacustre(
-                "Paseo por el Lago Llanquihue", 2, "Lancha turística");
+        servicios.add(new RutaGastronomica(
+                "Ruta Gastronomica Llanquihue", 3, 4));
 
-        PaseoLacustre paseo2 = new PaseoLacustre(
-                "Navegación a Puerto Varas", 3, "Catamarán");
+        servicios.add(new PaseoLacustre(
+                "Paseo por el Lago Llanquihue", 2, "Lancha turistica"));
 
-        ExcursionCultural excursion1 = new ExcursionCultural(
-                "Excursión Patrimonial Frutillar", 4, "Teatro del Lago");
+        servicios.add(new PaseoLacustre(
+                "Navegacion a Puerto Varas", 3, "Catamaran"));
 
-        ExcursionCultural excursion2 = new ExcursionCultural(
-                "Recorrido Histórico Puerto Octay", 3, "Casa Niklitschek");
+        servicios.add(new ExcursionCultural(
+                "Excursion Patrimonial Frutillar", 4, "Teatro del Lago"));
 
-        System.out.println("===== RUTAS GASTRONÓMICAS =====");
+        servicios.add(new ExcursionCultural(
+                "Recorrido Historico Puerto Octay", 3, "Casa Niklitschek"));
+
+        System.out.println("===== SERVICIOS TURÍSTICOS LLANQUIHUE TOUR =====");
         System.out.println();
-        System.out.println(ruta1);
-        System.out.println();
-        System.out.println(ruta2);
 
-        System.out.println("\n===== PASEOS LACUSTRES =====");
-        System.out.println();
-        System.out.println(paseo1);
-        System.out.println();
-        System.out.println(paseo2);
-
-        System.out.println("\n===== EXCURSIONES CULTURALES =====");
-        System.out.println();
-        System.out.println(excursion1);
-        System.out.println();
-        System.out.println(excursion2);
-    }    
-    
+        
+// Recorre la lista de servicios turisticos y muestra su informacion
+        
+        for (ServicioTuristico servicio : servicios) {
+            servicio.mostrarInformacion();
+            System.out.println();
+        }
+    }
 }

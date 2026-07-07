@@ -36,6 +36,14 @@ public class RutaGastronomica extends ServicioTuristico {
         this.cantidadRestaurantes = cantidadRestaurantes;
     }
     
+      /**
+     * Muestra la informacion de la ruta gastronomica.
+     */
+    @Override
+    public void mostrarInformacion() {
+        System.out.println(this.toString());
+    }
+    
 /**
 * Devuelve la información de la ruta gastronomica.
 *

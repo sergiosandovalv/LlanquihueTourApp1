@@ -33,6 +33,14 @@ public ExcursionCultural(String nombre, int duracionHoras, String lugarHistorico
     public void setLugarHistorico(String lugarHistorico) {
         this.lugarHistorico = lugarHistorico;
     }
+    
+    /**
+ * Muestra la informacion de la excursion cultural.
+ */
+@Override
+public void mostrarInformacion() {
+    System.out.println(this.toString());
+}
 
 /**
 * Devuelve la informacion de la excursion cultural
