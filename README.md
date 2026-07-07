@@ -66,7 +66,7 @@ Gracias al polimorfismo, Java ejecuta automáticamente el método `mostrarInform
 
 # 🔄 Flujo de ejecución del sistema
 
-El funcionamiento del proyecto sigue el siguiente proceso:
+El funcionamiento del proyecto con sus procesos:
 
 1. La clase **Main** inicia la ejecución del sistema.
 2. Se crea una instancia de **GestorServicios**.
