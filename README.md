@@ -14,69 +14,133 @@
 
 # 📘 Descripción general del sistema
 
-Este proyecto corresponde a la Evaluación de la asignatura **Desarrollo Orientado a Objetos I**, correspondiente a la **Semana 7**.
+Este proyecto corresponde a la Evaluación de la asignatura **Desarrollo Orientado a Objetos I**, correspondiente a la **Semana 8**.
 
-El sistema fue desarrollado en Java y representa distintos servicios turísticos ofrecidos por la empresa **Llanquihue Tour**.
+El sistema fue desarrollado en Java y representa un sistema de gestión para la empresa turística **Llanquihue Tour**, permitiendo registrar distintos tipos de entidades mediante una interfaz gráfica desarrollada con Java Swing.
 
-En esta versión se incorpora el uso de **herencia** y **polimorfismo** mediante una colección `List<ServicioTuristico>`, permitiendo almacenar diferentes tipos de servicios turísticos y recorrerlos utilizando una única referencia de la superclase.
+Durante esta etapa se incorporan nuevos conceptos de Programación Orientada a Objetos, incluyendo interfaces, colecciones dinámicas, validaciones, documentación mediante Javadoc e integración con Git y GitHub.
 
-La aplicación implementa los siguientes conceptos de Programación Orientada a Objetos:
+La aplicación implementa los siguientes conceptos:
 
 - Encapsulamiento.
 - Herencia.
 - Polimorfismo.
+- Interfaces (`Registrable` y `Marcable`).
 - Constructores.
 - Getters y Setters.
 - Sobrescritura de métodos mediante `@Override`.
-- Uso de `super()` para reutilizar constructores.
+- Uso de `super()`.
+- Uso de `instanceof`.
+- Colecciones dinámicas (`ArrayList`).
+- Validaciones mediante `JOptionPane`.
+- Interfaz gráfica desarrollada con Java Swing.
 - Organización modular mediante paquetes.
-- Uso de colecciones dinámicas (`ArrayList`).
-- Recorrido de objetos mediante `for-each`.
-- Ejecución desde una clase principal.
+- Documentación utilizando Javadoc.
+- Control de versiones mediante Git.
+- Publicación del proyecto en GitHub.
 
-El sistema crea distintos servicios turísticos y muestra su información por consola utilizando el método `mostrarInformacion()`, el cual hace uso del método `toString()` sobrescrito en cada subclase.
+El sistema permite registrar Guías turísticos, Vehículos y Colaboradores externos, almacenándolos dinámicamente y mostrando posteriormente toda la información registrada desde la interfaz gráfica.
+
+---
+
+# 🖥️ Interfaz gráfica
+
+La aplicación incorpora una interfaz gráfica desarrollada con Java Swing que permite administrar las entidades registradas de manera sencilla e intuitiva.
+
+Entre sus principales funcionalidades destacan:
+
+- Registro de Guías turísticos.
+- Registro de Vehículos.
+- Registro de Colaboradores externos.
+- Validación de campos obligatorios.
+- Ayuda contextual según el tipo de registro.
+- Visualización de registros.
+- Limpieza automática del formulario.
+- Confirmación antes de salir del sistema.
+- Incorporación del logotipo de Llanquihue Tour.
 
 ---
 
 # 🔄 Polimorfismo aplicado
 
-El proyecto utiliza una colección de tipo:
+El sistema utiliza una colección dinámica de entidades registradas.
 
 ```java
-List<ServicioTuristico> servicios = new ArrayList<>();
+ArrayList<Registrable> entidades = new ArrayList<>();
 ```
 
-En esta colección se almacenan objetos pertenecientes a distintas subclases:
+En ella se almacenan distintos tipos de objetos:
 
-- `RutaGastronomica`
-- `PaseoLacustre`
-- `ExcursionCultural`
+- GuiaTuristico
+- Vehiculo
+- ColaboradorExterno
 
-Posteriormente, la colección es recorrida mediante un ciclo `for-each`:
+Posteriormente la colección es recorrida mediante un ciclo `for-each`, demostrando el uso del polimorfismo.
 
 ```java
-for (ServicioTuristico servicio : servicios) {
-    servicio.mostrarInformacion();
+for (Registrable entidad : entidades) {
+    System.out.println(entidad.mostrarResumen());
 }
 ```
 
-Gracias al polimorfismo, Java ejecuta automáticamente el método `mostrarInformacion()` correspondiente al tipo real de cada objeto, utilizando una única referencia de la superclase.
+Gracias al polimorfismo, Java ejecuta automáticamente el método correspondiente al tipo real de cada objeto.
+
+---
+
+# 🔄 Interfaces implementadas
+
+Durante esta etapa se incorporaron interfaces para reforzar el uso del polimorfismo.
+
+## Registrable
+
+Permite registrar cualquier entidad que pueda ser almacenada por el sistema.
+
+Implementada por:
+
+- GuiaTuristico
+- Vehiculo
+- ColaboradorExterno
+
+## Marcable
+
+Permite registrar entrada y salida de determinadas entidades.
+
+Implementada por:
+
+- GuiaTuristico
+- ColaboradorExterno
+
+---
+
+# 🔍 Uso de instanceof
+
+El sistema identifica automáticamente el tipo real de cada entidad registrada mediante el operador `instanceof`.
+
+Esto permite reconocer:
+
+- GuiaTuristico
+- Vehiculo
+- ColaboradorExterno
+- RutaGastronomica
+- PaseoLacustre
+- ExcursionCultural
+
+Además, cuando una entidad implementa la interfaz `Marcable`, el sistema registra automáticamente su entrada y salida.
 
 ---
 
 # 🔄 Flujo de ejecución del sistema
 
-El funcionamiento del proyecto con sus procesos:
+El funcionamiento general del proyecto es el siguiente:
 
-1. La clase **Main** inicia la ejecución del sistema.
-2. Se crea una instancia de **GestorServicios**.
-3. Se crea una colección `List<ServicioTuristico>`.
-4. Se agregan objetos de las clases:
-   - `RutaGastronomica`
-   - `PaseoLacustre`
-   - `ExcursionCultural`
-5. La colección se recorre mediante un ciclo `for-each`.
-6. Cada objeto ejecuta su propio método `mostrarInformacion()`, demostrando el uso del polimorfismo.
+1. Se inicia la aplicación desde la clase principal.
+2. Se carga la interfaz gráfica.
+3. El usuario selecciona el tipo de registro.
+4. Se validan los datos ingresados.
+5. Se crea el objeto correspondiente.
+6. La entidad se almacena en un `ArrayList`.
+7. El usuario puede visualizar todos los registros almacenados.
+8. El sistema identifica automáticamente el tipo de cada entidad.
 
 ---
 
@@ -85,33 +149,53 @@ El funcionamiento del proyecto con sus procesos:
 ```text
 LlanquihueTourApp1/
 
+├── README.md
 ├── build.xml
 ├── manifest.mf
 ├── nbproject/
 └── src/
     ├── data/
-    │   └── GestorServicios.java
+    │   ├── GestorServicios.java
+    │   └── GestorEntidades.java
     │
     ├── model/
     │   ├── ServicioTuristico.java
     │   ├── RutaGastronomica.java
     │   ├── PaseoLacustre.java
-    │   └── ExcursionCultural.java
+    │   ├── ExcursionCultural.java
+    │   ├── RecursoAgencia.java
+    │   ├── GuiaTuristico.java
+    │   ├── Vehiculo.java
+    │   ├── ColaboradorExterno.java
+    │   ├── Registrable.java
+    │   └── Marcable.java
+    │
+    ├── resources/
+    │   └── logo.png
     │
     └── ui/
-        └── Main.java
+        ├── Main.java
+        ├── Test.java
+        └── Test.form
 ```
 
 ---
 
-# 🏗️ Estructura de Herencia del proyecto
+# 🏗️ Estructura de herencia
 
 ```text
-                ServicioTuristico
-                       │
-      ┌────────────────┼────────────────┐
-      │                │                │
-RutaGastronomica  PaseoLacustre  ExcursionCultural
+                   ServicioTuristico
+                          │
+      ┌───────────────────┼───────────────────┐
+      │                   │                   │
+RutaGastronomica   PaseoLacustre   ExcursionCultural
+
+
+                  RecursoAgencia
+                         │
+        ┌────────────────┼─────────────────┐
+        │                │                 │
+ GuiaTuristico      Vehiculo     ColaboradorExterno
 ```
 
 ---
@@ -120,52 +204,75 @@ RutaGastronomica  PaseoLacustre  ExcursionCultural
 
 ## 📁 ui
 
-Contiene la clase **Main**, encargada de iniciar la ejecución del sistema creando una instancia de `GestorServicios` y ejecutando la demostración del polimorfismo.
+Contiene la interfaz gráfica del sistema desarrollada mediante Java Swing.
+
+- Main
+- Test
 
 ---
 
 ## 📁 model
 
-Contiene las clases principales del dominio del problema.
+Contiene todas las clases del dominio del problema.
 
-- **ServicioTuristico:** clase base (superclase) que representa un servicio turístico.
-- **RutaGastronomica:** hereda de `ServicioTuristico` e incorpora la cantidad de restaurantes.
-- **PaseoLacustre:** hereda de `ServicioTuristico` e incorpora el tipo de embarcación.
-- **ExcursionCultural:** hereda de `ServicioTuristico` e incorpora el lugar histórico visitado.
+- ServicioTuristico
+- RutaGastronomica
+- PaseoLacustre
+- ExcursionCultural
+- RecursoAgencia
+- GuiaTuristico
+- Vehiculo
+- ColaboradorExterno
+- Registrable
+- Marcable
 
 ---
 
 ## 📁 data
 
-Contiene la clase **GestorServicios**, responsable de crear la colección de servicios turísticos y demostrar el uso del polimorfismo mediante una lista de objetos.
+Contiene las clases encargadas de administrar la información del sistema.
+
+- GestorServicios
+- GestorEntidades
+
+---
+
+## 📁 resources
+
+Contiene los recursos gráficos utilizados por la aplicación.
+
+- logo.png
 
 ---
 
 # 🧩 Conceptos de Programación Orientada a Objetos aplicados
 
-- Herencia mediante `extends`.
-- Reutilización de constructores con `super()`.
-- Sobrescritura de métodos utilizando `@Override`.
-- Implementación de polimorfismo mediante `mostrarInformacion()`.
-- Uso de una colección `List<ServicioTuristico>`.
-- Recorrido de objetos mediante un ciclo `for-each`.
-- Encapsulamiento mediante atributos privados.
-- Acceso a los atributos mediante Getters y Setters.
-- Organización modular utilizando paquetes.
-- Reutilización del método `toString()` mediante `super.toString()`.
+- Encapsulamiento.
+- Herencia.
+- Polimorfismo.
+- Interfaces.
+- Uso de `instanceof`.
+- Uso de `ArrayList`.
+- Reutilización mediante `super()`.
+- Sobrescritura mediante `@Override`.
+- Validaciones de datos.
+- Interfaz gráfica con Swing.
+- Documentación mediante Javadoc.
 
 ---
 
 # 💻 Tecnologías utilizadas
 
 - Java JDK 26
+- Java Swing
 - Apache NetBeans IDE
 - Git
 - GitHub
+- Markdown
 
 ---
 
-# ⚙️ Instrucciones para clonar y ejecutar el proyecto
+# ⚙️ Instrucciones para ejecutar el proyecto
 
 ## Clonar el repositorio
 
@@ -176,95 +283,64 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 ## Abrir el proyecto
 
 1. Abrir Apache NetBeans IDE.
-2. Seleccionar **File → Open Project**.
-3. Buscar la carpeta del proyecto clonado.
-4. Abrir **LlanquihueTourApp1**.
+2. File → Open Project.
+3. Seleccionar LlanquihueTourApp1.
+4. Abrir el proyecto.
 
-## Ejecutar el proyecto
+## Ejecutar
 
-1. Abrir la clase **Main.java** ubicada en el paquete **ui**.
-2. Ejecutar el proyecto.
-3. El sistema creará una colección de servicios turísticos.
-4. La colección será recorrida mediante polimorfismo.
-5. Se mostrará la información de rutas gastronómicas, paseos lacustres y excursiones culturales.
-
----
-
-# 📄 Resultado esperado
-
-Al ejecutar el sistema se mostrará una salida similar a la siguiente:
-
-```text
-===== SERVICIOS TURISTICOS LLANQUIHUE TOUR =====
-
-===== SERVICIO TURÍSTICO =====
-Nombre: Ruta Sabores del Sur
-Duración: 4 horas
-Cantidad de restaurantes: 5
-
-===== SERVICIO TURÍSTICO =====
-Nombre: Ruta Gastronomica Llanquihue
-Duración: 3 horas
-Cantidad de restaurantes: 4
-
-===== SERVICIO TURÍSTICO =====
-Nombre: Paseo por el Lago Llanquihue
-Duración: 2 horas
-Tipo de embarcación: Lancha turistica
-
-===== SERVICIO TURÍSTICO =====
-Nombre: Navegacion a Puerto Varas
-Duración: 3 horas
-Tipo de embarcación: Catamaran
-
-===== SERVICIO TURÍSTICO =====
-Nombre: Excursion Patrimonial Frutillar
-Duración: 4 horas
-Lugar histórico: Teatro del Lago
-
-===== SERVICIO TURÍSTICO =====
-Nombre: Recorrido Historico Puerto Octay
-Duración: 3 horas
-Lugar histórico: Casa Niklitschek
-```
+1. Ejecutar la clase Main.java.
+2. Se abrirá la interfaz gráfica.
+3. Registrar entidades.
+4. Mostrar registros.
+5. Utilizar las ayudas contextuales.
 
 ---
 
-## ▶️ Ejemplo de ejecución
+# 📄 Funcionalidades implementadas
 
-El siguiente fragmento muestra cómo el sistema utiliza el polimorfismo para recorrer la colección de servicios turísticos:
-
-```java
-for (ServicioTuristico servicio : servicios) {
-    servicio.mostrarInformacion();
-}
-```
-
-Cada objeto ejecuta automáticamente la versión de `mostrarInformacion()` correspondiente a su clase, demostrando el comportamiento polimórfico del sistema.
+- Registro de Guías turísticos.
+- Registro de Vehículos.
+- Registro de Colaboradores externos.
+- Validación de campos.
+- Ayuda contextual.
+- Mostrar registros.
+- Limpiar formulario.
+- Confirmación al salir.
+- Carga del logotipo institucional.
+- Identificación automática mediante `instanceof`.
+- Uso de interfaces.
+- Uso de polimorfismo.
 
 ---
 
 # 🎯 Objetivos de aprendizaje alcanzados
 
-- Aplicar el concepto de herencia en Java.
-- Implementar polimorfismo mediante sobrescritura de métodos.
-- Utilizar una colección `List<ServicioTuristico>` para almacenar diferentes tipos de objetos.
-- Recorrer una colección utilizando un ciclo `for-each`.
-- Organizar un proyecto utilizando paquetes.
-- Reutilizar código mediante el uso de `super()`.
-- Modelar un problema utilizando Programación Orientada a Objetos.
+- Aplicar herencia.
+- Aplicar polimorfismo.
+- Implementar interfaces.
+- Utilizar colecciones dinámicas.
+- Aplicar `instanceof`.
+- Desarrollar una interfaz gráfica con Swing.
+- Validar datos ingresados.
+- Documentar código mediante Javadoc.
+- Gestionar versiones mediante Git.
+- Publicar proyectos utilizando GitHub.
 
 ---
 
 # ✅ Conclusión
 
-Este proyecto permitió aplicar los principales conceptos de la Programación Orientada a Objetos en Java mediante una estructura basada en herencia y polimorfismo. El uso de una colección `List<ServicioTuristico>` permitió almacenar diferentes tipos de servicios turísticos y recorrerlos utilizando una única referencia de la superclase, demostrando la reutilización de código, la organización modular y el comportamiento polimórfico de los objetos durante la ejecución del sistema.
+Durante esta etapa del proyecto se amplió significativamente la aplicación desarrollada en la semana anterior, incorporando una interfaz gráfica completamente funcional, validaciones de datos, documentación mediante Javadoc, integración con Git y GitHub e implementación de interfaces para reforzar los principios de la Programación Orientada a Objetos.
+
+La solución desarrollada demuestra el uso de herencia, polimorfismo, encapsulamiento, interfaces, colecciones dinámicas y validaciones, permitiendo registrar y administrar diferentes entidades de la empresa Llanquihue Tour mediante una interfaz intuitiva y fácil de utilizar.
 
 ---
 
 # 🔗 Repositorio
 
-**GitHub:**  
+**GitHub:**
+
 <https://github.com/sergiosandovalv/LlanquihueTourApp1>
 
 ---
