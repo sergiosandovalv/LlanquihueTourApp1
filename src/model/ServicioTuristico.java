@@ -6,7 +6,7 @@ package model;
  *
  * @author Sergio Sandoval
  */
-public class ServicioTuristico {
+public abstract class ServicioTuristico implements Registrable  {
 
     private String nombre;
     private int duracionHoras;
@@ -17,6 +17,7 @@ public class ServicioTuristico {
      * @param nombre Nombre del servicio turistico.
      * @param duracionHoras Duracion del servicio en horas.
      */
+    
     public ServicioTuristico(String nombre, int duracionHoras) {
         this.nombre = nombre;
         this.duracionHoras = duracionHoras;
@@ -37,14 +38,27 @@ public class ServicioTuristico {
     public void setDuracionHoras(int duracionHoras) {
         this.duracionHoras = duracionHoras;
     }
+    
+        
 
     /**
      * Muestra la informacion del servicio turistico.
      */
+    
     public void mostrarInformacion() {
         System.out.println(this.toString());
 
     }
+    
+    /**
+     *
+     * @return
+     */
+    
+    
+    @Override
+    public abstract String mostrarResumen();
+    
 
     @Override
     public String toString() {

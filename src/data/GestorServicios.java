@@ -6,6 +6,9 @@ import model.PaseoLacustre;
 import model.ExcursionCultural;
 import java.util.ArrayList;
 import java.util.List;
+import model.GuiaTuristico;
+import model.Vehiculo;
+import model.ColaboradorExterno;
 
 /**
  * Clase encargada de administrar una coleccion de
@@ -17,11 +20,31 @@ import java.util.List;
 public class GestorServicios {
 
 /**
-* Crea y muestra servicios turisticos aplicando polimorfismo.
+* 
 */
     public void mostrarServicios() {
 
         List<ServicioTuristico> servicios = new ArrayList<>();
+        
+        GestorEntidades gestorEntidades = new GestorEntidades();
+        
+        gestorEntidades.agregarEntidad(
+        new GuiaTuristico(
+                "Pedro González",
+                "GUIA-001",
+                "Turismo aventura"));
+
+        gestorEntidades.agregarEntidad(
+        new Vehiculo(
+                "Minibús Llanquihue Tour",
+                "VEH-001",
+                "Minibús"));
+
+        gestorEntidades.agregarEntidad(
+        new ColaboradorExterno(
+                "Carolina Soto",
+                "COL-001",
+                "Servicios Turísticos del Sur"));
 
         servicios.add(new RutaGastronomica(
                 "Ruta Sabores del Sur", 4, 5));
@@ -45,11 +68,27 @@ public class GestorServicios {
         System.out.println();
 
         
-// Recorre la lista de servicios turisticos y muestra su informacion
-        
-        for (ServicioTuristico servicio : servicios) {
-            servicio.mostrarInformacion();
-            System.out.println();
-        }
-    }
+    // Recorre la lista y muestra la información      
+
+
+    for (ServicioTuristico servicio : servicios) {
+
+    gestorEntidades.agregarEntidad(servicio);
+
+    servicio.mostrarInformacion();
+    System.out.println();
+    
+           
+     }
+
+    // Muestra una sola vez el resumen de todas las entidades
+    System.out.println("===== RESUMEN DE ENTIDADES =====");
+    System.out.println();
+
+    gestorEntidades.mostrarEntidades();
+
+
+   }
+    
 }
+

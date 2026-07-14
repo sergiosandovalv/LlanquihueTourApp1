@@ -13,14 +13,13 @@ public class RutaGastronomica extends ServicioTuristico {
     
     
     
-/**
- * Constructor de la clase RutaGastronomica
- * 
- * @param nombre Nombre de la ruta gastronomica
- * @param duracionHoras Duracion del recorrido en horas
- * @param cantidadRestaurantes cantidadRestaurantes incluidos en la ruta
- */   
-    
+    /**
+    * Constructor de la clase RutaGastronomica
+    * 
+    * @param nombre Nombre de la ruta gastronomica
+    * @param duracionHoras Duracion del recorrido en horas
+    * @param cantidadRestaurantes cantidadRestaurantes incluidos en la ruta
+    */       
     public RutaGastronomica(String nombre, int duracionHoras, int cantidadRestaurantes) {
     
        super(nombre, duracionHoras);
@@ -36,9 +35,9 @@ public class RutaGastronomica extends ServicioTuristico {
         this.cantidadRestaurantes = cantidadRestaurantes;
     }
     
-      /**
-     * Muestra la informacion de la ruta gastronomica.
-     */
+    /**
+    * Muestra la informacion de la ruta gastronomica.
+    */
     @Override
     public void mostrarInformacion() {
         System.out.println(this.toString());
@@ -48,7 +47,13 @@ public class RutaGastronomica extends ServicioTuristico {
 * Devuelve la información de la ruta gastronomica.
 *
 * @return Informacion completa del servicio.
-*/
+*/      
+@Override    
+     public String mostrarResumen() {
+        return "Ruta gastronómica: " + getNombre(); 
+        
+     }       
+    
 @Override
     public String toString() {
         return super.toString() +

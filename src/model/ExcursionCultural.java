@@ -2,13 +2,13 @@
 package model;
 
 /**
- * Clase que representa una excursion cultural
- * 
- * Hereda los atributos de ServicioTuristico y agrega
- * el lugar historico que se visita durante el recorrido
- *
- * @author Sergio Sandoval
- */
+* Clase que representa una excursion cultural
+* 
+* Hereda los atributos de ServicioTuristico y agrega
+* el lugar historico que se visita durante el recorrido
+*
+* @author Sergio Sandoval
+*/
 public class ExcursionCultural extends ServicioTuristico {
     
     private String lugarHistorico;
@@ -30,24 +30,31 @@ public ExcursionCultural(String nombre, int duracionHoras, String lugarHistorico
         return lugarHistorico;
     }
 
-    public void setLugarHistorico(String lugarHistorico) {
+public void setLugarHistorico(String lugarHistorico) {
         this.lugarHistorico = lugarHistorico;
     }
     
-    /**
- * Muestra la informacion de la excursion cultural.
- */
+/**
+* Muestra la informacion de la excursion cultural.
+*/
+@Override
+public String mostrarResumen() {
+    return "Excursión cultural: " + getNombre();
+}    
+    
+
+
+
 @Override
 public void mostrarInformacion() {
     System.out.println(this.toString());
 }
 
 /**
-* Devuelve la informacion de la excursion cultural
+* 
 *
-* @return Informacion completa del servicio
-*/
-    
+* 
+*/    
 @Override
 public String toString() {
     return super.toString() +

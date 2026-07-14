@@ -22,17 +22,17 @@ public class PaseoLacustre extends ServicioTuristico {
      */
     
     
-   public PaseoLacustre(String nombre, int duracionHoras, String tipoEmbarcacion) {
+public PaseoLacustre(String nombre, int duracionHoras, String tipoEmbarcacion) {
        
        super(nombre, duracionHoras);
        this.tipoEmbarcacion = tipoEmbarcacion;
    } 
 
-    public String getTipoEmbarcacion() {
+public String getTipoEmbarcacion() {
         return tipoEmbarcacion;
     }
 
-    public void setTipoEmbarcacion(String tipoEmbarcacion) {
+public void setTipoEmbarcacion(String tipoEmbarcacion) {
         this.tipoEmbarcacion = tipoEmbarcacion;
     }
     
@@ -45,10 +45,16 @@ public void mostrarInformacion() {
 }
     
 /**
-* Devuelve la informacion del paseo lacustre.
+* 
 *
-* @return Informacion completa del servicio.
+* 
 */   
+
+@Override
+public String mostrarResumen() {
+    return "Paseo lacustre: " + getNombre();
+}
+
 
 @Override
 public String toString() {
