@@ -248,7 +248,7 @@ Contiene las clases responsables de la interacción con el usuario y la ejecuci�
 
 ## 📁 model
 
-Clases del dominio del problema y jerarquía de herencia.
+Clases del dominio del problema, conteniendo a la clase padre y jerarquía de herencia.
 
 ## 📁 data
 
