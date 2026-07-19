@@ -251,7 +251,7 @@ RutaGastronomica   PaseoLacustre   ExcursionCultural
 
 ## 📁 ui
 
-Interfaz gráfica del sistema desarrollada con Java Swing.
+Contiene las clases responsables de la interacción con el usuario y la ejecución de la aplicación.
 
 ## 📁 model
 
