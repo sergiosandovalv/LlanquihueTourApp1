@@ -248,7 +248,7 @@ Contiene las clases responsables de la interacción con el usuario y la ejecuci�
 
 ## 📁 model
 
-Clases del dominio del problema, conteniendo a la clase padre y jerarquía de herencia.
+Clases que representan el dominio del problema, incluyendo las clases base y sus respectivas jerarquías de herencia.
 
 ## 📁 data
 
@@ -306,11 +306,11 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 ## Ejecutar
 
 1. Ejecutar la clase `Main.java`.
-2. Dentro de NeatBeans ir al package ui, click derecho sobre la clase Test.java y seleccionar la opción **Run File**
+2. Dentro de NetBeans ir al package ui, click derecho sobre la clase Test.java y seleccionar la opción **Run File**
 3. En la interfaz gráfica registrar con las opciones desplegables.
 4. Utilizar las opciones de ayuda para los diferentes registros
 5. Visualizar los registros con la opción **Mostrar Registros** 
-6. Salir de aplicación con el boton **salir**, y abrir la aplicación nuevamente para validar que los archivos fueron almacenado.
+6. Salir de la aplicación mediante el botón **Salir** y ejecutarla nuevamente para verificar que la información fue almacenada correctamente en los archivos de texto.
 
  <img width="891" height="941" alt="image" src="https://github.com/user-attachments/assets/3df279ce-b29a-405e-b449-c2b1899b96cd" />
 
@@ -354,7 +354,7 @@ El proyecto **Llanquihue Tour** representa la evolución progresiva de los conte
 
 Cada semana incorporó nuevas funcionalidades sobre una misma base de código, permitiendo construir una aplicación cada vez más completa sin perder la organización del proyecto ni la reutilización del software previamente desarrollado.
 
-En esta versión se consolidan aspectos como la persistencia mediante archivos de texto, las excepciones personalizadas, las validaciones reutilizables y la separación de responsabilidades mediante paquetes, fortaleciendo la mantenibilidad de la aplicación y escalabilidad.
+En esta versión se consolidan aspectos como la persistencia mediante archivos de texto, las excepciones personalizadas, las validaciones reutilizables y la separación de responsabilidades mediante paquetes, fortaleciendo la mantenibilidad y la escalabilidad de la aplicación.
 
 
 ---
