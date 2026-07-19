@@ -140,9 +140,7 @@ for (Registrable entidad : entidades) {
 
 ## Registrable
 
-Permite registrar cualquier entidad administrada por el sistema.
-
-Implementada por:
+Permite registrar cualquier entidad administrada por el sistema implementada por:
 
 - GuiaTuristico
 - Vehiculo
