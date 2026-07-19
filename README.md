@@ -33,8 +33,6 @@ Durante la Semana 9 el sistema evoluciona incorporando persistencia mediante arc
 
 # 📘 Descripción general del sistema
 
-Esta versión representa la continuidad del proyecto desarrollado durante las semanas anteriores, integrando nuevos componentes sin reemplazar la funcionalidad existente.
-
 Sobre la base del sistema construido previamente se incorporan mecanismos de persistencia, validación centralizada, manejo de excepciones y una mejor separación de responsabilidades mediante paquetes, obteniendo una aplicación más cercana a un entorno real de desarrollo.
 
 El proyecto implementa los siguientes conceptos:
