@@ -310,7 +310,7 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 3. En la interfaz gráfica registrar con las opciones deplegables.
 4. Utilizar las opciones de ayuda para los diferentes registros
 5. Visualizar los registros con la opción **Mostrar Registros** 
-6. Salir de aplicación con el boton **salir**, y abrir nuevamente para validar que los archivos fueron almacenado.
+6. Salir de aplicación con el boton **salir**, y abrir la aplicación nuevamente para validar que los archivos fueron almacenado.
 
  <img width="891" height="941" alt="image" src="https://github.com/user-attachments/assets/3df279ce-b29a-405e-b449-c2b1899b96cd" />
 
