@@ -24,7 +24,6 @@ Este enfoque permitió fortalecer la reutilización del código, mejorar la mant
 
 # 🎯 Propósito del proyecto
 
-Este proyecto corresponde a la evolución del sistema **Llanquihue Tour**, desarrollado durante las distintas semanas de la asignatura **Desarrollo Orientado a Objetos I**.
 
 Su propósito es consolidar los contenidos aprendidos mediante la construcción progresiva de una aplicación orientada a objetos, incorporando nuevas funcionalidades sobre la base del trabajo realizado en las versiones anteriores.
 
