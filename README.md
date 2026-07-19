@@ -12,15 +12,25 @@
 
 ---
 
+# 🎯 Propósito del proyecto
+
+Este proyecto corresponde a la Evaluación de la asignatura **Desarrollo Orientado a Objetos I**, correspondiente a la **Semana 9**.
+
+El propósito de esta aplicación es desarrollar un sistema orientado a objetos para la empresa turística **Llanquihue Tour**, aplicando progresivamente los conceptos estudiados durante la asignatura.
+
+En esta versión el sistema incorpora persistencia mediante archivos de texto, validaciones centralizadas, excepciones personalizadas e interfaz gráfica desarrollada con Java Swing, permitiendo registrar y administrar recursos de la agencia y servicios turísticos de forma organizada y reutilizable.
+
+---
+
 # 📘 Descripción general del sistema
 
-Este proyecto corresponde a la Evaluación de la asignatura **Desarrollo Orientado a Objetos I**, correspondiente a la **Semana 8**.
+El sistema fue desarrollado en Java utilizando Programación Orientada a Objetos.
 
-El sistema fue desarrollado en Java y representa un sistema de gestión para la empresa turística **Llanquihue Tour**, permitiendo registrar distintos tipos de entidades mediante una interfaz gráfica desarrollada con Java Swing.
+La aplicación permite registrar distintos recursos de la agencia, administrar servicios turísticos y almacenar la información en archivos de texto para mantener la persistencia de los datos.
 
-Durante esta etapa se incorporan nuevos conceptos de Programación Orientada a Objetos, incluyendo interfaces, colecciones dinámicas, validaciones, documentación mediante Javadoc e integración con Git y GitHub.
+Durante esta etapa se incorporan nuevos conceptos de programación, reforzando la reutilización del código, la validación de información y la separación de responsabilidades mediante paquetes.
 
-La aplicación implementa los siguientes conceptos:
+El proyecto implementa los siguientes conceptos:
 
 - Encapsulamiento.
 - Herencia.
@@ -32,32 +42,66 @@ La aplicación implementa los siguientes conceptos:
 - Uso de `super()`.
 - Uso de `instanceof`.
 - Colecciones dinámicas (`ArrayList`).
-- Validaciones mediante `JOptionPane`.
+- Persistencia mediante archivos de texto.
+- Lectura y escritura de archivos.
+- Excepciones personalizadas.
+- Validaciones reutilizables.
 - Interfaz gráfica desarrollada con Java Swing.
 - Organización modular mediante paquetes.
 - Documentación utilizando Javadoc.
 - Control de versiones mediante Git.
 - Publicación del proyecto en GitHub.
 
-El sistema permite registrar Guías turísticos, Vehículos y Colaboradores externos, almacenándolos dinámicamente y mostrando posteriormente toda la información registrada desde la interfaz gráfica.
-
 ---
 
 # 🖥️ Interfaz gráfica
 
-La aplicación incorpora una interfaz gráfica desarrollada con Java Swing que permite administrar las entidades registradas de manera sencilla e intuitiva.
+La aplicación incorpora una interfaz gráfica desarrollada con Java Swing que permite administrar las entidades registradas de forma sencilla.
 
-Entre sus principales funcionalidades destacan:
+Principales funcionalidades:
 
 - Registro de Guías turísticos.
 - Registro de Vehículos.
 - Registro de Colaboradores externos.
-- Validación de campos obligatorios.
-- Ayuda contextual según el tipo de registro.
+- Validación de datos ingresados.
+- Ayuda contextual.
 - Visualización de registros.
 - Limpieza automática del formulario.
-- Confirmación antes de salir del sistema.
+- Confirmación antes de salir.
+- Persistencia automática de la información.
 - Incorporación del logotipo de Llanquihue Tour.
+
+---
+
+# 💾 Persistencia de datos
+
+Uno de los principales avances de esta versión es la incorporación de persistencia mediante archivos de texto.
+
+El sistema permite:
+
+- Leer entidades previamente almacenadas.
+- Registrar automáticamente nuevas entidades.
+- Mantener la información disponible entre ejecuciones.
+- Administrar los servicios turísticos desde archivos externos.
+
+Archivos utilizados:
+
+- `entidades.txt`
+- `servicios.txt`
+
+---
+
+# ⚠️ Validaciones y excepciones
+
+El sistema centraliza las validaciones mediante la clase `ValidadorDatos`, reutilizando las mismas reglas en todas las clases del modelo.
+
+Cuando un dato no cumple las condiciones establecidas, se lanza una excepción personalizada:
+
+```java
+DatoInvalidoException
+```
+
+Esto permite mantener el código organizado y facilita el manejo de errores desde la interfaz gráfica.
 
 ---
 
@@ -75,7 +119,7 @@ En ella se almacenan distintos tipos de objetos:
 - Vehiculo
 - ColaboradorExterno
 
-Posteriormente la colección es recorrida mediante un ciclo `for-each`, demostrando el uso del polimorfismo.
+Posteriormente la colección es recorrida utilizando un ciclo `for-each`, demostrando el uso del polimorfismo.
 
 ```java
 for (Registrable entidad : entidades) {
@@ -83,17 +127,13 @@ for (Registrable entidad : entidades) {
 }
 ```
 
-Gracias al polimorfismo, Java ejecuta automáticamente el método correspondiente al tipo real de cada objeto.
-
 ---
 
 # 🔄 Interfaces implementadas
 
-Durante esta etapa se incorporaron interfaces para reforzar el uso del polimorfismo.
-
 ## Registrable
 
-Permite registrar cualquier entidad que pueda ser almacenada por el sistema.
+Permite registrar cualquier entidad administrada por el sistema.
 
 Implementada por:
 
@@ -114,33 +154,20 @@ Implementada por:
 
 # 🔍 Uso de instanceof
 
-El sistema identifica automáticamente el tipo real de cada entidad registrada mediante el operador `instanceof`.
-
-Esto permite reconocer:
-
-- GuiaTuristico
-- Vehiculo
-- ColaboradorExterno
-- RutaGastronomica
-- PaseoLacustre
-- ExcursionCultural
-
-Además, cuando una entidad implementa la interfaz `Marcable`, el sistema registra automáticamente su entrada y salida.
+El sistema identifica automáticamente el tipo real de cada objeto mediante `instanceof`, permitiendo administrar correctamente cada recurso registrado.
 
 ---
 
-# 🔄 Flujo de ejecución del sistema
+# 🔄 Flujo general del sistema
 
-El funcionamiento general del proyecto es el siguiente:
-
-1. Se inicia la aplicación desde la clase principal.
-2. Se carga la interfaz gráfica.
+1. Se inicia la aplicación.
+2. Se cargan los datos almacenados.
 3. El usuario selecciona el tipo de registro.
 4. Se validan los datos ingresados.
 5. Se crea el objeto correspondiente.
-6. La entidad se almacena en un `ArrayList`.
-7. El usuario puede visualizar todos los registros almacenados.
-8. El sistema identifica automáticamente el tipo de cada entidad.
+6. La información se almacena en memoria.
+7. Se registra automáticamente en el archivo correspondiente.
+8. El usuario puede visualizar los registros almacenados.
 
 ---
 
@@ -155,8 +182,12 @@ LlanquihueTourApp1/
 ├── nbproject/
 └── src/
     ├── data/
-    │   ├── GestorServicios.java
-    │   └── GestorEntidades.java
+    │   ├── EscritorEntidades.java
+    │   ├── GestorEntidades.java
+    │   └── GestorServicios.java
+    │
+    ├── exceptions/
+    │   └── DatoInvalidoException.java
     │
     ├── model/
     │   ├── ServicioTuristico.java
@@ -171,12 +202,18 @@ LlanquihueTourApp1/
     │   └── Marcable.java
     │
     ├── resources/
+    │   ├── entidades.txt
+    │   ├── servicios.txt
     │   └── logo.png
     │
-    └── ui/
-        ├── Main.java
-        ├── Test.java
-        └── Test.form
+    ├── ui/
+    │   ├── Main.java
+    │   └── Test.java
+    │
+    └── util/
+        ├── LectorEntidades.java
+        ├── LectorServicios.java
+        └── ValidadorDatos.java
 ```
 
 ---
@@ -204,60 +241,27 @@ RutaGastronomica   PaseoLacustre   ExcursionCultural
 
 ## 📁 ui
 
-Contiene la interfaz gráfica del sistema desarrollada mediante Java Swing.
-
-- Main
-- Test
-
----
+Interfaz gráfica del sistema desarrollada con Java Swing.
 
 ## 📁 model
 
-Contiene todas las clases del dominio del problema.
-
-- ServicioTuristico
-- RutaGastronomica
-- PaseoLacustre
-- ExcursionCultural
-- RecursoAgencia
-- GuiaTuristico
-- Vehiculo
-- ColaboradorExterno
-- Registrable
-- Marcable
-
----
+Clases del dominio del problema y jerarquía de herencia.
 
 ## 📁 data
 
-Contiene las clases encargadas de administrar la información del sistema.
+Gestión de entidades, servicios y escritura de archivos.
 
-- GestorServicios
-- GestorEntidades
+## 📁 util
 
----
+Clases reutilizables para lectura de archivos y validaciones.
+
+## 📁 exceptions
+
+Excepciones personalizadas utilizadas por el sistema.
 
 ## 📁 resources
 
-Contiene los recursos gráficos utilizados por la aplicación.
-
-- logo.png
-
----
-
-# 🧩 Conceptos de Programación Orientada a Objetos aplicados
-
-- Encapsulamiento.
-- Herencia.
-- Polimorfismo.
-- Interfaces.
-- Uso de `instanceof`.
-- Uso de `ArrayList`.
-- Reutilización mediante `super()`.
-- Sobrescritura mediante `@Override`.
-- Validaciones de datos.
-- Interfaz gráfica con Swing.
-- Documentación mediante Javadoc.
+Archivos de datos y recursos gráficos.
 
 ---
 
@@ -272,7 +276,15 @@ Contiene los recursos gráficos utilizados por la aplicación.
 
 ---
 
-# ⚙️ Instrucciones para ejecutar el proyecto
+# ⚙️ Requisitos
+
+- Java JDK 26 o superior.
+- Apache NetBeans IDE.
+- Git (opcional).
+
+---
+
+# 🚀 Instrucciones para ejecutar el proyecto
 
 ## Clonar el repositorio
 
@@ -283,63 +295,60 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 ## Abrir el proyecto
 
 1. Abrir Apache NetBeans IDE.
-2. File → Open Project.
-3. Seleccionar LlanquihueTourApp1.
-4. Abrir el proyecto.
+2. Seleccionar **File → Open Project**.
+3. Abrir **LlanquihueTourApp1**.
 
 ## Ejecutar
 
-1. Ejecutar la clase Main.java.
-2. Se abrirá la interfaz gráfica.
-3. Registrar entidades.
-4. Mostrar registros.
-5. Utilizar las ayudas contextuales.
+1. Ejecutar la clase `Main.java`.
+2. Registrar entidades mediante la interfaz gráfica.
+3. Visualizar los registros.
+4. Verificar la persistencia de la información en los archivos de texto.
 
 ---
 
 # 📄 Funcionalidades implementadas
 
-- Registro de Guías turísticos.
-- Registro de Vehículos.
-- Registro de Colaboradores externos.
-- Validación de campos.
-- Ayuda contextual.
-- Mostrar registros.
-- Limpiar formulario.
-- Confirmación al salir.
-- Carga del logotipo institucional.
-- Identificación automática mediante `instanceof`.
+- Registro de entidades.
+- Validación de datos.
+- Persistencia automática.
+- Lectura de archivos.
+- Escritura de archivos.
+- Manejo de excepciones.
 - Uso de interfaces.
-- Uso de polimorfismo.
+- Polimorfismo.
+- Interfaz gráfica.
+- Documentación mediante Javadoc.
+- Integración con Git y GitHub.
 
 ---
 
 # 🎯 Objetivos de aprendizaje alcanzados
 
-- Aplicar herencia.
-- Aplicar polimorfismo.
-- Implementar interfaces.
-- Utilizar colecciones dinámicas.
-- Aplicar `instanceof`.
-- Desarrollar una interfaz gráfica con Swing.
-- Validar datos ingresados.
-- Documentar código mediante Javadoc.
-- Gestionar versiones mediante Git.
+- Aplicar encapsulamiento.
+- Implementar herencia y polimorfismo.
+- Utilizar interfaces.
+- Implementar persistencia mediante archivos.
+- Crear excepciones personalizadas.
+- Centralizar validaciones.
+- Organizar aplicaciones mediante paquetes.
+- Documentar código utilizando Javadoc.
+- Gestionar versiones con Git.
 - Publicar proyectos utilizando GitHub.
 
 ---
 
 # ✅ Conclusión
 
-Durante esta etapa del proyecto se amplió significativamente la aplicación desarrollada en la semana anterior, incorporando una interfaz gráfica completamente funcional, validaciones de datos, documentación mediante Javadoc, integración con Git y GitHub e implementación de interfaces para reforzar los principios de la Programación Orientada a Objetos.
+Durante la Semana 9 el proyecto evolucionó desde una aplicación basada únicamente en una interfaz gráfica hacia un sistema más completo y organizado, incorporando persistencia de datos mediante archivos de texto, validaciones reutilizables, excepciones personalizadas y una mejor separación de responsabilidades entre las distintas capas de la aplicación.
 
-La solución desarrollada demuestra el uso de herencia, polimorfismo, encapsulamiento, interfaces, colecciones dinámicas y validaciones, permitiendo registrar y administrar diferentes entidades de la empresa Llanquihue Tour mediante una interfaz intuitiva y fácil de utilizar.
+La solución desarrollada integra los principales conceptos de Programación Orientada a Objetos estudiados durante la asignatura, permitiendo administrar recursos de la empresa Llanquihue Tour mediante una aplicación mantenible, reutilizable y preparada para futuras ampliaciones.
 
 ---
 
 # 🔗 Repositorio
 
-**GitHub:**
+**GitHub**
 
 <https://github.com/sergiosandovalv/LlanquihueTourApp1>
 
