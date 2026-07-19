@@ -307,7 +307,7 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 
 1. Ejecutar la clase `Main.java`.
 2. Dentro de NeatBeans ir al package ui, click derecho sobre la clase Test.java y seleccionar la opción **Run File**
-3. En la interfaz gráfica registrar con las opciones deplegables.
+3. En la interfaz gráfica registrar con las opciones desplegables.
 4. Utilizar las opciones de ayuda para los diferentes registros
 5. Visualizar los registros con la opción **Mostrar Registros** 
 6. Salir de aplicación con el boton **salir**, y abrir la aplicación nuevamente para validar que los archivos fueron almacenado.
