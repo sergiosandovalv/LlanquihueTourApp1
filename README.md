@@ -12,23 +12,31 @@
 
 ---
 
+# 📖 Introducción
+
+Este repositorio contiene el desarrollo evolutivo del proyecto **Llanquihue Tour**, construido durante las distintas semanas de la asignatura **Desarrollo Orientado a Objetos I**.
+
+Cada nueva entrega incorporó progresivamente conceptos de Programación Orientada a Objetos sobre una misma base de código, permitiendo que la aplicación evolucionara desde un modelo inicial de clases hasta un sistema organizado por capas, con persistencia de datos, validaciones reutilizables y una arquitectura modular.
+
+Este enfoque permitió fortalecer la reutilización del código, mejorar la mantenibilidad del proyecto y aplicar buenas prácticas de desarrollo de software.
+
+---
+
 # 🎯 Propósito del proyecto
 
-Este proyecto corresponde a la Evaluación de la asignatura **Desarrollo Orientado a Objetos I**, correspondiente a la **Semana 9**.
+Este proyecto corresponde a la evolución del sistema **Llanquihue Tour**, desarrollado durante las distintas semanas de la asignatura **Desarrollo Orientado a Objetos I**.
 
-El propósito de esta aplicación es desarrollar un sistema orientado a objetos para la empresa turística **Llanquihue Tour**, aplicando progresivamente los conceptos estudiados durante la asignatura.
+Su propósito es consolidar los contenidos aprendidos mediante la construcción progresiva de una aplicación orientada a objetos, incorporando nuevas funcionalidades sobre la base del trabajo realizado en las versiones anteriores.
 
-En esta versión el sistema incorpora persistencia mediante archivos de texto, validaciones centralizadas, excepciones personalizadas e interfaz gráfica desarrollada con Java Swing, permitiendo registrar y administrar recursos de la agencia y servicios turísticos de forma organizada y reutilizable.
+Durante la Semana 9 el sistema evoluciona incorporando persistencia mediante archivos de texto, validaciones centralizadas y excepciones personalizadas, manteniendo la estructura desarrollada en las etapas previas y fortaleciendo la organización del proyecto.
 
 ---
 
 # 📘 Descripción general del sistema
 
-El sistema fue desarrollado en Java utilizando Programación Orientada a Objetos.
+Esta versión representa la continuidad del proyecto desarrollado durante las semanas anteriores, integrando nuevos componentes sin reemplazar la funcionalidad existente.
 
-La aplicación permite registrar distintos recursos de la agencia, administrar servicios turísticos y almacenar la información en archivos de texto para mantener la persistencia de los datos.
-
-Durante esta etapa se incorporan nuevos conceptos de programación, reforzando la reutilización del código, la validación de información y la separación de responsabilidades mediante paquetes.
+Sobre la base del sistema construido previamente se incorporan mecanismos de persistencia, validación centralizada, manejo de excepciones y una mejor separación de responsabilidades mediante paquetes, obteniendo una aplicación más cercana a un entorno real de desarrollo.
 
 El proyecto implementa los siguientes conceptos:
 
@@ -54,9 +62,11 @@ El proyecto implementa los siguientes conceptos:
 
 ---
 
-# 🖥️ Interfaz gráfica
+# 🖥️ Interfaz de usuario
 
-La aplicación incorpora una interfaz gráfica desarrollada con Java Swing que permite administrar las entidades registradas de forma sencilla.
+La aplicación mantiene la interfaz gráfica desarrollada durante la etapa anterior, la cual continúa siendo el principal medio de interacción con el usuario.
+
+En esta versión se amplía su funcionalidad mediante la incorporación de persistencia de datos, validaciones reutilizables y manejo de excepciones, sin modificar la experiencia de uso del sistema.
 
 Principales funcionalidades:
 
@@ -340,9 +350,13 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 
 # ✅ Conclusión
 
-Durante la Semana 9 el proyecto evolucionó desde una aplicación basada únicamente en una interfaz gráfica hacia un sistema más completo y organizado, incorporando persistencia de datos mediante archivos de texto, validaciones reutilizables, excepciones personalizadas y una mejor separación de responsabilidades entre las distintas capas de la aplicación.
+El proyecto **Llanquihue Tour** representa la evolución progresiva de los contenidos desarrollados durante la asignatura **Desarrollo Orientado a Objetos I**.
 
-La solución desarrollada integra los principales conceptos de Programación Orientada a Objetos estudiados durante la asignatura, permitiendo administrar recursos de la empresa Llanquihue Tour mediante una aplicación mantenible, reutilizable y preparada para futuras ampliaciones.
+Cada semana incorporó nuevas funcionalidades sobre una misma base de código, permitiendo construir una aplicación cada vez más completa sin perder la organización del proyecto ni la reutilización del software previamente desarrollado.
+
+En esta versión se consolidan aspectos como la persistencia mediante archivos de texto, las excepciones personalizadas, las validaciones reutilizables y la separación de responsabilidades mediante paquetes, fortaleciendo la mantenibilidad de la aplicación y preparando una base sólida para futuras ampliaciones.
+
+La evolución continua del proyecto permitió aplicar de manera integrada los principales principios de la Programación Orientada a Objetos, reflejando el aprendizaje progresivo alcanzado durante la asignatura.
 
 ---
 
