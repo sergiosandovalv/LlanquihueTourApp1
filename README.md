@@ -148,9 +148,7 @@ Permite registrar cualquier entidad administrada por el sistema implementada por
 
 ## Marcable
 
-Permite registrar entrada y salida de determinadas entidades.
-
-Implementada por:
+Permite registrar entrada y salida de determinadas entidades implementada por:
 
 - GuiaTuristico
 - ColaboradorExterno
