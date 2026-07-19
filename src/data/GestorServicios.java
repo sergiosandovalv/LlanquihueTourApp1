@@ -1,14 +1,11 @@
 package data;
 
-import model.ServicioTuristico;
-import model.RutaGastronomica;
-import model.PaseoLacustre;
-import model.ExcursionCultural;
-import java.util.ArrayList;
 import java.util.List;
-import model.GuiaTuristico;
-import model.Vehiculo;
-import model.ColaboradorExterno;
+
+import model.Registrable;
+import model.ServicioTuristico;
+import util.LectorEntidades;
+import util.LectorServicios;
 
 /**
  * Clase encargada de administrar una coleccion de
@@ -19,76 +16,55 @@ import model.ColaboradorExterno;
  */
 public class GestorServicios {
 
-/**
-* 
-*/
+    /**
+     * Carga los servicios turisticos y las entidades
+     * desde sus respectivos archivos, muestra la
+     * informacion de los servicios y posteriormente
+     * el resumen de todas las entidades registradas.
+     */
     public void mostrarServicios() {
 
-        List<ServicioTuristico> servicios = new ArrayList<>();
-        
-        GestorEntidades gestorEntidades = new GestorEntidades();
-        
-        gestorEntidades.agregarEntidad(
-        new GuiaTuristico(
-                "Pedro González",
-                "GUIA-001",
-                "Turismo aventura"));
+        // Carga los servicios turisticos desde el archivo.
+        List<ServicioTuristico> servicios
+                = LectorServicios.cargarServicios(
+                        "src/resources/servicios.txt");
 
-        gestorEntidades.agregarEntidad(
-        new Vehiculo(
-                "Minibús Llanquihue Tour",
-                "VEH-001",
-                "Minibús"));
+        // Carga las entidades desde el archivo.
+        List<Registrable> entidades
+                = LectorEntidades.cargarEntidades(
+                        "src/resources/entidades.txt");
 
-        gestorEntidades.agregarEntidad(
-        new ColaboradorExterno(
-                "Carolina Soto",
-                "COL-001",
-                "Servicios Turísticos del Sur"));
+        GestorEntidades gestorEntidades
+                = new GestorEntidades();
 
-        servicios.add(new RutaGastronomica(
-                "Ruta Sabores del Sur", 4, 5));
+        // Agrega las entidades cargadas al gestor.
+        for (Registrable entidad : entidades) {
 
-        servicios.add(new RutaGastronomica(
-                "Ruta Gastronomica Llanquihue", 3, 4));
+            gestorEntidades.agregarEntidad(entidad);
+        }
 
-        servicios.add(new PaseoLacustre(
-                "Paseo por el Lago Llanquihue", 2, "Lancha turistica"));
+        System.out.println(
+                "===== SERVICIOS TURÍSTICOS "
+                + "LLANQUIHUE TOUR =====");
 
-        servicios.add(new PaseoLacustre(
-                "Navegacion a Puerto Varas", 3, "Catamaran"));
-
-        servicios.add(new ExcursionCultural(
-                "Excursion Patrimonial Frutillar", 4, "Teatro del Lago"));
-
-        servicios.add(new ExcursionCultural(
-                "Recorrido Historico Puerto Octay", 3, "Casa Niklitschek"));
-
-        System.out.println("===== SERVICIOS TURÍSTICOS LLANQUIHUE TOUR =====");
         System.out.println();
 
-        
-    // Recorre la lista y muestra la información      
+        // Recorre y muestra los servicios mediante polimorfismo.
+        for (ServicioTuristico servicio : servicios) {
 
+            gestorEntidades.agregarEntidad(servicio);
 
-    for (ServicioTuristico servicio : servicios) {
+            servicio.mostrarInformacion();
 
-    gestorEntidades.agregarEntidad(servicio);
+            System.out.println();
+        }
 
-    servicio.mostrarInformacion();
-    System.out.println();
-    
-           
-     }
+        System.out.println(
+                "===== RESUMEN DE ENTIDADES =====");
 
-    // Muestra una sola vez el resumen de todas las entidades
-    System.out.println("===== RESUMEN DE ENTIDADES =====");
-    System.out.println();
+        System.out.println();
 
-    gestorEntidades.mostrarEntidades();
+        gestorEntidades.mostrarEntidades();
+    }
 
-
-   }
-    
-}
-
+ }

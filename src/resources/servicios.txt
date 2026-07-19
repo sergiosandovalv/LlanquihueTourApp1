@@ -1,0 +1,6 @@
+RUTA;Ruta Sabores del Sur;4;5;25000
+RUTA;Ruta Gastronomica Llanquihue;3;4;22000
+PASEO;Paseo por el Lago Llanquihue;2;Lancha turistica;18000
+PASEO;Navegacion a Puerto Varas;3;Catamaran;28000
+EXCURSION;Excursion Patrimonial Frutillar;4;Teatro del Lago;24000
+EXCURSION;Recorrido Historico Puerto Octay;3;Casa Niklitschek;20000

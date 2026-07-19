@@ -1,0 +1,7 @@
+GUIA;Pedro González;GUIA-001;Turismo aventura;987654321;pedro@llanquihuetour.cl;SI
+VEHICULO;Minibús Llanquihue Tour;ABCD-12;Minibús;20;SI
+COLABORADOR;Carolina Soto;COL-001;Servicios Turísticos del Sur
+COLABORADOR;Juan Pérez;COL-002;Turismo Patagonia
+COLABORADOR;Contanza Sandoval;COL-003;Hotel del Lago
+VEHICULO;Hyundai;SCDI-41;Van;1;SI
+GUIA;Felipe Acuña;GUIA-986;Senderismo;Sin registrar;Sin registrar;SI

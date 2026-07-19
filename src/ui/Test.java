@@ -2,6 +2,7 @@
 package ui;
 
 import data.GestorEntidades;
+import data.EscritorEntidades;
 import model.Registrable;
 import model.GuiaTuristico;
 import model.Vehiculo;
@@ -9,8 +10,20 @@ import model.ColaboradorExterno;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Image;
+import exceptions.DatoInvalidoException;
+import java.util.List;
+import util.LectorEntidades;
+import model.RecursoAgencia;
 
 
+
+/**
+ * Ventana principal del sistema Llanquihue Tour.
+ * Permite registrar, visualizar y almacenar
+ * las entidades administradas por la agencia.
+ *
+ * @author Sergio Sandoval
+ */
 
 public class Test extends javax.swing.JFrame {
     
@@ -25,7 +38,10 @@ public class Test extends javax.swing.JFrame {
     public Test() {
         initComponents();
         
-            // Colores de la interfaz
+        // Mantiene el tamaño fijo de la ventana para conservar el diseño de la interfaz.
+        setResizable(false);
+   
+    // Colores de la interfaz
     getContentPane().setBackground(
             new java.awt.Color(140, 180, 210));
 
@@ -34,22 +50,29 @@ public class Test extends javax.swing.JFrame {
 
     jPanel3.setBackground(
             new java.awt.Color(195, 218, 235));
-    
-    jLabel2.setForeground(new java.awt.Color(0, 60, 125));
-    
-    jLabel2.setFont(new java.awt.Font("FreeSans", java.awt.Font.BOLD, 40));
-    
-            
+
+    jLabel2.setForeground(
+            new java.awt.Color(0, 60, 125));
+
+    jLabel2.setFont(
+            new java.awt.Font(
+                    "FreeSans",
+                    java.awt.Font.BOLD,
+                    40));
+
     gestorEntidades = new GestorEntidades();
+
+    cargarEntidadesIniciales();
 
     txtAreaRegistros.setEditable(false);
     txtAreaRegistros.setLineWrap(true);
     txtAreaRegistros.setWrapStyleWord(true);
 
-    setLocationRelativeTo(null);    
-    
+    setLocationRelativeTo(null);
+
     ImageIcon icono = new ImageIcon(
-            getClass().getResource("/resources/logo.png"));
+            getClass().getResource(
+                    "/resources/logo.png"));
 
     Image imagen = icono.getImage().getScaledInstance(
             lbLogo.getWidth(),
@@ -58,11 +81,27 @@ public class Test extends javax.swing.JFrame {
 
     lbLogo.setIcon(new ImageIcon(imagen));
     lbLogo.setText("");
-    
         
     }
     
+/**
+ * Carga en el gestor las entidades almacenadas
+ * en el archivo entidades.txt.
+ */
+private void cargarEntidadesIniciales() {
 
+    List<Registrable> entidades =
+            LectorEntidades.cargarEntidades(
+                    "src/resources/entidades.txt"
+            );
+
+    for (Registrable entidad : entidades) {
+
+        gestorEntidades.agregarEntidad(entidad);
+    }
+    
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -365,7 +404,7 @@ public class Test extends javax.swing.JFrame {
     for (Registrable registro
             : gestorEntidades.getEntidades()) {
 
-        if (registro instanceof model.RecursoAgencia recurso
+        if (registro instanceof RecursoAgencia recurso
                 && recurso.getIdentificador()
                         .equalsIgnoreCase(identificador)) {
 
@@ -377,6 +416,10 @@ public class Test extends javax.swing.JFrame {
         }
     }
 
+    
+
+    try {
+
     Registrable nuevoRegistro;
 
     switch (tipoRegistro) {
@@ -385,21 +428,24 @@ public class Test extends javax.swing.JFrame {
             nuevoRegistro = new GuiaTuristico(
                     nombre,
                     identificador,
-                    datoEspecifico);
+                    datoEspecifico
+            );
             break;
 
         case "Vehículo":
             nuevoRegistro = new Vehiculo(
                     nombre,
                     identificador,
-                    datoEspecifico);
+                    datoEspecifico
+            );
             break;
 
         case "Colaborador externo":
             nuevoRegistro = new ColaboradorExterno(
                     nombre,
                     identificador,
-                    datoEspecifico);
+                    datoEspecifico
+            );
             break;
 
         default:
@@ -407,7 +453,15 @@ public class Test extends javax.swing.JFrame {
     }
 
     gestorEntidades.agregarEntidad(nuevoRegistro);
+    
+    EscritorEntidades.guardarEntidad(nuevoRegistro);
 
+} catch (DatoInvalidoException e) {
+
+    mostrarError(e.getMessage());
+    return;
+}
+   
     JOptionPane.showMessageDialog(
             this,
             "Registro agregado correctamente.",
@@ -473,8 +527,8 @@ public class Test extends javax.swing.JFrame {
     private void limpiarFormulario() {
         cmbtipousuario.setSelectedIndex(0);
         txtNombre.setText("");
-         txtIdentificador.setText("");
-         txtDatoEspecifico.setText("");
+        txtIdentificador.setText("");
+        txtDatoEspecifico.setText("");
 
     jLabel3.setText("Nombre:");
     jLabel4.setText("Identificador:");
@@ -558,11 +612,11 @@ private void mostrarError(String mensaje) {
     }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void txtDatoEspecificoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDatoEspecificoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtDatoEspecificoActionPerformed
 
     private void txtIdentificadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdentificadorActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtIdentificadorActionPerformed
 
     
