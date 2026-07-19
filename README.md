@@ -306,9 +306,14 @@ git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 ## Ejecutar
 
 1. Ejecutar la clase `Main.java`.
-2. Registrar entidades mediante la interfaz gráfica.
-3. Visualizar los registros.
-4. Verificar la persistencia de la información en los archivos de texto.
+2. Dentro de NeatBeans ir al package ui, click derecho sobre la clase Test.java y seleccionar la opción **Run File**
+3. En la interfaz gráfica registrar con las opciones del deplegables.
+4. Utilizar las opciones de ayuda para los diferentes registros
+5. Visualizar los registros, con la opción **Mostrar Registros** 
+6. Salir de aplicación, y abrir nuevamente para validar que los archivos fueron almacenado.
+
+<img width="891" height="941" alt="image" src="https://github.com/user-attachments/assets/3df279ce-b29a-405e-b449-c2b1899b96cd" />
+
 
 ---
 
