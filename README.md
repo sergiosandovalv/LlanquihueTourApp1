@@ -292,6 +292,8 @@ Archivos de datos y recursos gráficos.
 ## Clonar el repositorio
 
 ```bash
+Desde terminal ejecutar:
+
 git clone https://github.com/sergiosandovalv/LlanquihueTourApp1.git
 ```
 
