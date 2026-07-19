@@ -354,9 +354,8 @@ El proyecto **Llanquihue Tour** representa la evolución progresiva de los conte
 
 Cada semana incorporó nuevas funcionalidades sobre una misma base de código, permitiendo construir una aplicación cada vez más completa sin perder la organización del proyecto ni la reutilización del software previamente desarrollado.
 
-En esta versión se consolidan aspectos como la persistencia mediante archivos de texto, las excepciones personalizadas, las validaciones reutilizables y la separación de responsabilidades mediante paquetes, fortaleciendo la mantenibilidad de la aplicación y preparando una base sólida para futuras ampliaciones.
+En esta versión se consolidan aspectos como la persistencia mediante archivos de texto, las excepciones personalizadas, las validaciones reutilizables y la separación de responsabilidades mediante paquetes, fortaleciendo la mantenibilidad de la aplicación y escalabilidad.
 
-La evolución continua del proyecto permitió aplicar de manera integrada los principales principios de la Programación Orientada a Objetos, reflejando el aprendizaje progresivo alcanzado durante la asignatura.
 
 ---
 
